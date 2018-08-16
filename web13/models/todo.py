@@ -12,6 +12,7 @@ D delete 删除数据
 
 Todo.new() 来创建一个 todo
 """
+
 class Todo(Model):
     @classmethod
     def new(cls, form):
@@ -61,3 +62,9 @@ class Todo(Model):
         # 创建时间和 更新时间
         self.ct = int(time.time())
         self.ut = self.ct
+
+    def time(self):
+        format = '%H:%M:%S'
+        value = self.ct
+        dt = time.strftime(format, value)
+        return dt
