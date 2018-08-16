@@ -65,6 +65,6 @@ class Todo(Model):
 
     def time(self):
         format = '%H:%M:%S'
-        value = self.ct
+        value = time.localtime(self.ct)
         dt = time.strftime(format, value)
         return dt
